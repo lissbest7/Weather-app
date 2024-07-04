@@ -1,0 +1,213 @@
+* {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.header-nav {
+    svg {
+        cursor: pointer;
+    }
+
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+
+    &-left,
+    &-right {
+        gap: 20px;
+        align-items: center;
+        display: flex;
+    }
+
+    &-left {
+        h1 {
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 30.48px;
+            color: #4793FF;
+        }
+    }
+
+    &-right {
+
+        input {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19.5px;
+            background-color: #dae9ff;
+            color: #000000;
+            border: 0;
+            height: 37px;
+            border-radius: 10px;
+            padding: 0 16px;
+        }
+    }
+}
+
+.main {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+
+    &-left {
+        box-shadow: 2px 5px 25px -3px #B4B4B440;
+        padding: 20px;
+        width: 400px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .top-info {
+            align-items: center;
+            justify-content: space-between;
+            display: flex;
+
+            &_left {
+                h1 {
+                    font-size: 96px;
+                    font-weight: 500;
+                    color: #4793ff;
+                }
+
+                p {
+                    font-size: 40px;
+                    font-weight: 400;
+                    max-width: 400px;
+                }
+            }
+
+        }
+
+        .bottom-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h1,
+            p {
+                font-size: 25px;
+                font-weight: 400;
+                line-height: 30.48px;
+                color: #939CB0;
+
+            }
+        }
+
+    }
+
+    &-right {
+        position: relative;
+        box-shadow: 2px 5px 25px -3px #B4B4B440;
+        height: 300px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        box-shadow: 2px 5px 25px -3px #B4B4B440;
+
+        img {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: -999;
+        }
+
+        height: 300px;
+        border-radius: 20px;
+
+        &-info {
+            position: relative;
+
+            .icon {
+                background-color: #FFFFFF;
+                box-shadow: 1px 4px 10px -1px #4793FF33;
+                width: 38px;
+                height: 38px;
+                padding-top: 7px;
+
+                svg {
+                    width: 100%;
+                }
+
+                border-radius: 100%;
+            }
+
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            h1 {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 17.07px;
+                color: #939CB0;
+            }
+
+
+            width: 750px;
+            border-radius: 10px;
+            padding: 20px;
+
+            .temperature,
+            .precipitation,
+            .pressure,
+            .wind {
+                gap: 32px;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+    }
+}
+
+body {
+    transition: all 0.3s ease-in-out;
+}
+
+body.dark {
+    background-color: #0d1117;
+    transition: all 0.3s ease-in-out;
+
+    .header-nav {
+        &-right {
+            select {
+                background-color: #4f4f4f;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+
+    .main {
+        &-left {
+            .top-info {
+                &_left p {
+                    transition: all 0.3s ease-in-out;
+                    color: #FFFFFF;
+
+                }
+            }
+        }
+
+        &-right {
+            h2 {
+                color: #FFFFFF;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+}
