@@ -13,13 +13,33 @@
   width: 100%;
 }
 
+ul,
+li,
+menu,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 .header-nav {
   margin-top: 20px;
   align-items: center;
   justify-content: space-between;
   display: flex;
 }
-.header-nav .button {
+.header-nav-language {
+  display: flex;
+  gap: 5px;
+}
+.header-nav-language .lan {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
   font-size: 16px;
   font-weight: 500;
   line-height: 19.5px;
@@ -27,6 +47,20 @@
   color: #000000;
   border: 0;
   height: 37px;
+  border-radius: 10px;
+  padding: 0 16px;
+}
+.header-nav-language .lan:hover {
+  background-color: #4793ff;
+}
+.header-nav .button {
+  min-height: 37px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.5px;
+  background-color: #dae9ff;
+  color: #000000;
+  border: 0;
   border-radius: 10px;
   padding: 0 16px;
   display: none;
@@ -49,7 +83,13 @@
   line-height: 30.48px;
   color: #4793ff;
 }
+.header-nav-right-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 .header-nav-right input {
+  transition: all 0.3s ease-in-out;
   font-size: 16px;
   font-weight: 500;
   line-height: 19.5px;
@@ -59,6 +99,18 @@
   height: 37px;
   border-radius: 10px;
   padding: 0 16px;
+}
+.header-nav-right input:focus {
+  background-color: #4793ff;
+}
+.header-nav-right input:focus::placeholder {
+  color: white;
+}
+.header-nav-right input:hover {
+  background-color: #4793ff;
+}
+.header-nav-right input:hover::placeholder {
+  color: white;
 }
 
 .main {
@@ -179,6 +231,11 @@ body.dark .main-right h2 {
 }
 
 @media screen and (max-width: 992px) {
+  .header-nav-right-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
   .header-nav-svg svg {
     display: none;
   }
@@ -194,6 +251,15 @@ body.dark .main-right h2 {
   }
 }
 @media screen and (max-width: 768px) {
+  .header-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .header-nav-right-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
   .main {
     gap: 20px;
     flex-direction: column;
@@ -208,6 +274,15 @@ body.dark .main-right h2 {
 @media screen and (max-width: 576px) {
   .header-nav {
     flex-direction: column;
+    gap: 15px;
+  }
+  .header-nav-right {
+    flex-direction: column;
+  }
+  .header-nav-right-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 15px;
   }
 }/*# sourceMappingURL=style.css.map */

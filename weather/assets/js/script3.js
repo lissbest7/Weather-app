@@ -72,15 +72,15 @@ const getData = async (cityName = "Baku") => {
     NNW: "north-northwest",
   };
 
-  time.innerText = `Time: ${cityTime}`;
-  city.innerText = `City: ${name}`;
+  time.innerText = `Saat: ${cityTime}`;
+  city.innerText = `Şəhər: ${name}`;
   precipitation.innerText = `${precip_mm}`;
-  temp_info.innerText = `${temp_c}° - feels like ${feelslike_c}°`;
+  temp_info.innerText = `${temp_c}° - ${feelslike_c}° kimi hiss olunur`;
   pressure.innerText = `${pressure_mb} mm Hg`;
   windPerSecond = (wind_kph * 1000) / 3600;
   wind.innerText = `${Math.round(windPerSecond)} m/s ${
     windDirectionMapping[wind_dir]
-  } - light wind`;
+  } - yüngül külək`;
   temperature.innerText = `${Math.round(temp_c)}°`;
 };
 
