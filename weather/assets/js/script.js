@@ -1,6 +1,10 @@
 const themeBtn = document.querySelector(".themebtn");
+const themeBtn2 = document.querySelector(".button");
 
 themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
+themeBtn2.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
 
@@ -34,11 +38,10 @@ const getData = async (cityName = "Baku") => {
   };
 
   const result = await fetch(url, options).then((res) => res.json());
-  console.log(result);
 
   const {
     location: { name, localtime },
-    current: { temp_c, feelslike_c, pressure_mb, wind_kph, wind_dir },
+    current: { temp_c, precip_mm, feelslike_c, pressure_mb, wind_kph, wind_dir },
   } = result;
   const cityTime = localtime.slice(11);
 
